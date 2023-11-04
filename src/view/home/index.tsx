@@ -24,9 +24,6 @@ export default function Home() {
         }
         setAmount(sum)
 
-        if (baskets.length > 0) {
-            onCheckout()
-        }
     }, [baskets])
 
     const onCheckout = () => {
@@ -38,7 +35,7 @@ export default function Home() {
         <div className={"w-full flex flex-col gap-2 justify-center items-start mt-10 "}>
             <div className="title w-full text-center mb-5">
                 <h1 className={'h1'}>Menu</h1>
-                <p>Umumiy narx: <b className={"sum-format"}>{formatter.format(amount)}</b></p>
+                <p>Umumiy narx: <b className={"sum-format"} onClick={onCheckout}>{formatter.format(amount)}</b></p>
             </div>
             <div
                 className="grid 2xl:grid-cols-8 xl:grid-cols-7 md:grid-cols-6 sm:grid-cols-5 grid-cols-3 md:gap-3 gap-5">
