@@ -1,0 +1,7 @@
+@import "button/index";
+@import "text/index";
+@import "card/index";
+
+body {
+  @apply bg-primary_dark text-white;
+}

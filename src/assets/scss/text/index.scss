@@ -1,0 +1,11 @@
+.h1 {
+  @apply text-2xl font-bold;
+}
+
+p {
+  @apply font-medium text-white xl:text-lg text-xs;
+}
+
+.sum-format{
+  @apply lowercase;
+}

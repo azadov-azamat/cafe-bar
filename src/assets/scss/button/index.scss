@@ -1,0 +1,23 @@
+#btn-component {
+  @apply w-full;
+
+  .btn {
+    @apply flex items-center justify-center gap-2 uppercase py-1;
+  }
+
+  .primary {
+    @apply bg-primary_yellow;
+  }
+
+  .danger {
+    @apply bg-primary_red;
+  }
+
+  .span {
+    @apply bg-transparent text-green-500;
+  }
+
+  svg {
+    @apply text-white xl:text-3xl text-2xl;
+  }
+}
