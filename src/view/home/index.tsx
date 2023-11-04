@@ -5,11 +5,17 @@ import {useAppSelector} from "../../redux/hooks.ts";
 import React from "react";
 import {formatter} from "../../config/servise.ts";
 
+const tele = window.Telegram.WebApp;
+
 export default function Home() {
 
     const {products, baskets} = useAppSelector(state => state.variables)
 
     const [amount, setAmount] = React.useState<number>(0)
+
+    React.useEffect(() => {
+        tele.ready();
+    });
 
     React.useEffect(()=> {
         let sum = 0
@@ -17,7 +23,16 @@ export default function Home() {
             sum += (Number(basket.price) * basket.amount)
         }
         setAmount(sum)
+
+        if (baskets.length > 0) {
+            onCheckout()
+        }
     }, [baskets])
+
+    const onCheckout = () => {
+        tele.MainButton.text = "Buyurtma berish";
+        tele.MainButton.show();
+    };
 
     return (
         <div className={"w-full flex flex-col gap-2 justify-center items-start mt-10 "}>
